@@ -1,0 +1,21 @@
+@font-face {
+	font-family: Frizz Quadrata;
+	src: url(fonts/frizzquadratatt.ttf);
+
+}
+@font-face {
+	font-family: Fantasque Sans Mono;
+	src: url(fonts/fantasquesansmono/fantasquesansmono-regular.otf);
+}
+
+h1 {
+	font-family: Frizz Quadrata;
+}
+
+p {
+	font-family: Fantasque Sans Mono;
+}
+
+div {
+	font-family: Frizz Quadrata;
+}
