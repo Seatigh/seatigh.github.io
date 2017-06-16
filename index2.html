@@ -23,12 +23,16 @@
 	//Map dim: 56x34
 	var canvas = document.getElementById('tutorial');
 	var ctx = canvas.getContext('2d');
-	ctx.fillStyle='rgb(0,0,0)';
 	
-	setInterval(function(){
+	var interval = setInterval(function(){
 		var points = sa.shift();
-		
+		if (points === undefined) {
+			clearInterval(interval);
+			return;
+		}	
 		ctx.beginPath();
+
+		ctx.fillStyle=`rgba(${parseInt(255*Math.random())},${parseInt(255*Math.random())},${parseInt(255*Math.random())},1)`;
 		ctx.ellipse(points[0], points[1], 5, 5, 0, 0, 8);
 		ctx.fill();
 		ctx.stroke();  
@@ -36,13 +40,13 @@
 	}, 1);
 
 	function shuffleArray(array) {
-    for (var i = array.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    }
-    return array;
-}
+		for (var i = array.length - 1; i > 0; i--) {
+			var j = Math.floor(Math.random() * (i + 1));
+			var temp = array[i];
+			array[i] = array[j];
+			array[j] = temp;
+		}
+		return array;
+	}
 </script>
 </html>
