@@ -24,3 +24,26 @@ canvas {
 	padding-top: 100px;
 	padding-left: 150px;
 }
+
+#button{
+	font-family: Fantasque Sans Mono;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background: white;
+	padding: 20px;
+	border: 1px solid black;
+	-webkit-border-radius: 3px;
+	box-shadow: 5px 5px 16px 7px rgba(0, 0, 0, 0.63);
+	-webkit-transition-duration: 0.5s;
+}
+
+#button:hover{
+	box-shadow: 5px 5px 160px 7px rgba(0, 0, 0, 0.63);
+
+}
+#button:active{
+	box-shadow: 5px 5px 160px 7px rgba(0, 0, 0, 0.63);
+	top: 52%;
+
+}
