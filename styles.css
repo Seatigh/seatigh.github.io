@@ -19,3 +19,8 @@ p {
 div {
 	font-family: Frizz Quadrata;
 }
+
+canvas {
+	padding-top: 100px;
+	padding-left: 150px;
+}
