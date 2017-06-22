@@ -28,8 +28,8 @@ canvas {
 #button{
 	font-family: Fantasque Sans Mono;
 	position: absolute;
-	top: 50%;
-	left: 50%;
+	top: 80%;
+	left: 45%;
 	background: white;
 	padding: 20px;
 	border: 1px solid black;
@@ -39,11 +39,30 @@ canvas {
 }
 
 #button:hover{
-	box-shadow: 5px 5px 160px 7px rgba(0, 0, 0, 0.63);
-
+	box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.63);
+	top: 80.1%;
+	cursor: pointer;
 }
 #button:active{
-	box-shadow: 5px 5px 160px 7px rgba(0, 0, 0, 0.63);
-	top: 52%;
+	box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.63);
+	top: 81%;
+	cursor: pointer;
+}
 
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+.fade-in {
+    opacity:0;
+    -webkit-animation:fadeIn ease-in 1;
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+
+    -webkit-animation-fill-mode:forwards; 
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+
+    -webkit-animation-duration:2.5s;
+    -moz-animation-duration:2.5s;
+    animation-duration:2.5s;
 }
