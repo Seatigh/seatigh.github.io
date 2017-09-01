@@ -1,11 +1,16 @@
 @font-face {
 	font-family: Frizz Quadrata;
-	src: url(fonts/frizzquadratatt.ttf);
+	src: url(../fonts/frizzquadratatt.ttf);
 
 }
 @font-face {
 	font-family: Fantasque Sans Mono;
-	src: url(fonts/fantasquesansmono/fantasquesansmono-regular.otf);
+	src: url(../fonts/fantasquesansmono/fantasquesansmono-regular.otf);
+}
+
+canvas {
+	padding-top: 100px;
+	padding-left: 150px;
 }
 
 .cool-text {
@@ -70,6 +75,48 @@ a:active {
     color: black;
     background-color: transparent;
     text-decoration: none;
+}
+
+#button{
+	font-family: Fantasque Sans Mono;
+	position: absolute;
+	top: 80%;
+	left: 45%;
+	background: white;
+	padding: 20px;
+	border: 1px solid black;
+	-webkit-border-radius: 3px;
+	box-shadow: 5px 5px 16px 7px rgba(0, 0, 0, 0.63);
+	-webkit-transition-duration: 0.5s;
+}
+
+#button:hover{
+	box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.63);
+	top: 80.1%;
+	cursor: pointer;
+}
+#button:active{
+	box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.63);
+	top: 81%;
+	cursor: pointer;
+}
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+.fade-in {
+    opacity:0;
+    -webkit-animation:fadeIn ease-in 1;
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+
+    -webkit-animation-fill-mode:forwards; 
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+
+    -webkit-animation-duration:2.5s;
+    -moz-animation-duration:2.5s;
+    animation-duration:2.5s;
 }
 
 /* =====HEXAGONAL IMAGE===== */
