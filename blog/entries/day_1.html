@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<xmp theme="united" style="display:none;">
+# A la tercera va a la vencida
+
+### 25 días para el apocalipsis
+
+Hoy ha sido mi primer día de trabajo después de todo el verano descansando. Bueno, quien dice trabajo dice tiempo perdido.
+Ha sido una charla de casi 4 horas sobre cosas que ya sabía cómo hacer y sobre cosas que no me conciernen.
+Pensaba que iba a poder avanzar con el Trabajo de Fin de Grado (TFG), pero me ha sido imposible.
+
+El caso es que llevo todo el verano intentando ponerme y hacer cosas, pero me resulta imposible.
+Me he replanteado varias veces el punto de ataque del mismo:
+
+ * Entender el código del juego
+ * Encontrar un lenguaje de programación óptimo (o eficiente)
+ * Diseñar las máquinas de estados
+ * Empezar con la memoria
+ 
+Ninguno de ellos ha durado más de 3 días en mi *planning*. Aunque bueno, os estoy contando todo sin ni siquiera explicaros de qué versa mi TFG.
+
+#### Bot con máquinas de estados y/o autómatas finitos
+
+Dicho así suena hasta feo, pero en la práctica puede llamar la atención de quién lo vea.
+Cuando la gente me pregunta sobre mi TFG siempre recaen en la palabra *bot* y no en las máquinas de estados o los autómatas finitos (será porque eso suena más feo y la palabra *bot* es más fácil de captar).
+Podría buscar un definición en cualquier diccionario y plantarla aquí, pero como ejercicio me viene bien explicarlo con mis propias palabras.
+Un *bot* es un agente automático, es decir, un agente (como entidad que puede estar en cualquier sitio) que tiene un comportamiento que no está controlado por un humano, sino por su propio código (por la máquina).
+Lo que viene a ser un programa informático que todo lo que realiza es de forma "autónoma".
+El entrecomillado lo pongo porque el código lo diseña, en la mayoría de los casos, una persona, así que hará lo que la persona haya escrito en ese código que haga y no lo que le de la gana.
+A no ser que... nada, no nos andemos por las ramas.
+
+Pero ¿qué es una máquina de estados?¿Qué es un autómata finito? Bueno, eso me tocará definirlo en la memoria, así que practiquemos aquí primero.
+
+
+![Máquina de estados](../../images/state_machine.png)
+
+Esto es una máquina de estados. Un sistema con diferentes estados y transiciones entre ellos. Los estados representan la situación actual del sistema y las transiciones son un reglejo de las acciones que realiza el sistema.
+Visto así quizá pueda quedar un poco pobre como prueba visual, así que os dejo esta otra que parece más *top*.
+
+![Máquina de estados simple](../../images/simple_state_machine.png)
+
+Esta es la máquina de estados que manejaría el control simple de un videojuego: se empieza en el menú, si se realiza la acción de iniciar juego se pasa al estado del juego (el cuál seguramente se maneje con otra máquina de estados o cualquier otro sistema), si estando en este y pierdes vuelves al menú, y si ganas pasas a ver las puntuaciones.
+Un sistema muy simple y que representa lo que tengo que hacer (solo que en mi caso será como 4 o 5 veces más complejo que eso y quizá haya más de 1 máquina de estados).
+
+Pese a todas las adversidades, nunca hay que rendirse. Voy a por todas y a gastar la última bala que me queda.
+
+#### *Hazlo o no lo hagas, pero no lo intentes.* - Maestro Yoda	
+</xmp>
+
+<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
+</html>
