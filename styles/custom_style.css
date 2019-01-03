@@ -13,12 +13,35 @@ canvas {
 	padding-left: 150px;
 }
 
-.cool-text {
-	font-family: Fantasque Sans Mono;
+#return-top {
+	display: block;
+	position: fixed;
+	bottom: 2em;
+	right: 2em;
+	z-index: 10;
+	padding: 0 0.5em;
+	border: 1px solid black;
+	border-radius: 5px;
+	background-color: black;
+	cursor: pointer;
 }
 
-.navbar-wraper{
-	margin-top: 20px;
+#return-top:hover {
+	background-color: red;
+	-webkit-transition-duration: 0.75s;
+}
+
+.consola {
+	border: 1px solid #999;
+	border-radius: 4px;
+	background: #f3f3f3;
+	font-size: 14px;
+	padding: 0.5em 0.75em;
+	text-align: justify;
+}
+
+.cool-text {
+	font-family: Fantasque Sans Mono;
 }
 
 .separator {
@@ -32,6 +55,16 @@ canvas {
 
 .entry-body {
 	padding: 0 2rem 0 2rem;
+}
+
+.img-entry-right {
+	display: block;
+	margin-left: auto;
+}
+
+.img-entry-left {
+	display: block;
+	margin-right: auto;
 }
 
 .img-padd {
@@ -49,8 +82,23 @@ canvas {
 	-webkit-transition-duration: 0.75s;
 }
 
-.footer{
-	margin-top: 4rem;
+.text-top {
+	padding: 0 0 3em 0.5714em;
+}
+
+.text-middle {
+	padding: 1.5em 0em;
+	text-align: center;
+}
+
+.text-bottom {
+	padding: 3em 0 0 0;
+	text-align: right;
+}
+
+
+.footer {
+	margin-top: 1rem;
 	background-color: #afafaf;
 	color: white;
 	-webkit-border-radius: 5px;

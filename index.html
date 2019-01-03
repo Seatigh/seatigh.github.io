@@ -7,7 +7,7 @@
 		
 		<title>Seatigh</title>
 		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
 		<!--Custom style-->
 		<link rel="stylesheet" href="styles/custom_style.css">
@@ -19,7 +19,7 @@
 			<p style="visibility: hidden;">Hits: <span>0</span></p>
 		</div>
 
-		<a id="button" class="fade-in">Coming soon...</a>
+		<a id="button" class="fade-in">Go to Blog</a>
 		
 		<!--<input id="hidden_input" type="text"/>-->
 		
@@ -93,12 +93,12 @@
 		 **************/
 		window.onload = function (){
 			var button = document.getElementById("button");
-			var easterEgg = prompt("This website will come soon...\nBut it has some magic!\nTry it!", "");
-			if (easterEgg == "blog") {
-				button.href = "blog/entries/day_1.html"
-			} else {
+			/*var easterEgg = prompt("This website will come soon...\nBut it has some magic!\nTry it!", "");
+			if (easterEgg == "blog") {*/
+				button.href = "blog/index.html"
+			/*} else {
 				alert("Muggles aren't allowed in Hogwarts.");
-			}
+			}*/
 		}
 		var hiddenText = document.getElementById("hidden_input").getText();
 	</script>
