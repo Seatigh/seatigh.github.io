@@ -21,6 +21,24 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 		<script src="/js/main.js"></script>
+		<script type="text/javascript">
+			var topDate = new Date("2019-04-08T00:00:00+02:00");
+			var topJulians = topDate.getTime()/1000;
+			
+			setInterval(function(){
+				var currentdate = new Date();
+				var currJulians = currentdate.getTime()/1000 | 0;
+				var delta = topJulians - currJulians;
+				var days = delta/3600/24;
+				var hours = (days - (days | 0)) * 24;
+				var mins = (hours - (hours | 0)) * 60;
+				var secs = (mins - (mins | 0)) * 60;
+				document.getElementById("days").innerHTML = ((days | 0));
+				document.getElementById("hours").innerHTML = ("0" + (hours | 0)).slice(-2);
+				document.getElementById("mins").innerHTML = ("0" + (mins | 0)).slice(-2);
+				document.getElementById("secs").innerHTML = ("0" + Math.round(secs)).slice(-2);
+			}, 1000);
+		</script>
 	</head>
 	<body class="cool-text">
 		<!-- Return top button -->
@@ -72,7 +90,7 @@
 						<div class="card-body">
 							<h5 class="card-title"><b><span class="color">Lo</span>L</b></h5>
 							<p class="card-text">Coming soon...</p>
-							<a href="" class="btn btn-outline-dark disabled">Disabled</a>
+							<a href="entries/2019/LoL.html" class="btn btn-outline-dark disabled"><i>Coming soon</i><!--<span id="days"></span>:<span id="hours"></span>:<span id="mins"></span>:<span id="secs">:</span>--></a>
 						</div>
 					</div>
 				</div>
@@ -81,9 +99,9 @@
 					<div class="card">
 						<img class="card-img-top" src="" alt="">
 						<div class="card-body">
-							<h5 class="card-title"><b><span class="color">Wh</span>atever</b></h5>
-							<p class="card-text">More whatevers...</p>
-							<a href="" class="btn btn-outline-dark">Explore</a>
+							<h5 class="card-title"><b><span class="color">Gu</span>yota</b></h5>
+							<p class="card-text"><b><span class="color">Gu</span>ayota</b> es un videojuego de exploración y puzzles ambientado en la mitolofía canaria y desarrollado por alumnos de la UC3M y VoxelSchool.</p>
+							<a href="entries/2019/Guayota.html" class="btn btn-outline-dark">Explore</a>
 						</div>
 					</div>
 				</div>
