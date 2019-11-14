@@ -44,6 +44,25 @@ canvas {
 	font-family: Fantasque Sans Mono;
 }
 
+.cool-img {
+	border: solid 2px black;
+	border-radius: 5px;
+	box-shadow: 5px 5px #5d5d5d;
+}
+
+.cool-img:hover {
+	border-color: #d30000;
+	cursor: pointer;
+	margin: 4px 0px 0px 4px;
+	-webkit-transition-duration: 0.5s;
+}
+
+.cool-img:active {
+	box-shadow: 3px 3px #282828;
+	margin: 6px 0px 0px 6px;
+	-webkit-transition-duration: 0s;
+}
+
 .separator {
 	border-top: 1px solid #606060;
 	border-bottom: 1px solid #606060;
@@ -90,7 +109,7 @@ canvas {
 	cursor: pointer;
 	border: 1px solid transparent;
 	-webkit-border-radius: 10px;
-	-webkit-transition-duration: 0.75s;
+	-webkit-transition-duration: 0.5s;
 }
 
 .text-top {
