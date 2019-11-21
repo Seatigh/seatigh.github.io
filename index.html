@@ -5,6 +5,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		
+		<link rel="icon" href="/images/marca.png">
 		<title>Seatigh</title>
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -15,17 +16,33 @@
 	<body>
 		<div class="container text-center">
 			<!--<img src="img/error.png" alt="error: not found" title="Not Found Image">-->
-			<canvas id="main_canvas" width="1100" height="700"></canvas>
-			<p style="visibility: hidden;">Hits: <span>0</span></p>
+			<div class="row">
+				<div class="col-md-12">
+					<canvas id="main_canvas" width="1100" height="550"></canvas>
+					<p style="visibility: hidden;">Hits: <span>0</span></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-sm-6 col-xs-3">
+					<a class="btn cool-img fade-in" href="/blog/index.html" role="button"><b>Blog</b></a>
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-3">
+					<a class="btn cool-img fade-in" href="/blog/aboutme.html" role="button"><b>Portfolio</b></a>
+				</div>
+			</div>
 		</div>
 
-		<a id="button" class="fade-in">Go to Blog</a>
+		<!-- <a id="button" class="fade-in">Go to Blog</a> -->
 		
 		<!--<input id="hidden_input" type="text"/>-->
 		
 	</body>
 
 	<script>
+
+		var windowH = window.innerHeight;
+		var paddT = (windowH/5).toString();
+		document.getElementById('main_canvas').style.paddingTop = paddT + "px";
 		/********
 		 * HITS *
 		 ********/
@@ -72,9 +89,9 @@
 			var color = country_color[points[2]];
 
 			ctx.fillStyle=`rgba(${color[0]},${color[1]},${color[2]},${color[3] || 1})`;
-			ctx.ellipse(points[0], points[1], 5, 5, 0, 0, 8);
+			ctx.ellipse(points[0]+80, points[1], 8, 8, 0, 0, 7);
 			ctx.fill();
-			ctx.stroke();  
+			ctx.stroke();
 			
 		}, 1);
 

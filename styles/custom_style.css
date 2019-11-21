@@ -9,8 +9,10 @@
 }
 
 canvas {
-	padding-top: 100px;
-	padding-left: 150px;
+	/*padding-top: 100px;
+	padding-left: 150px;*/
+	width: 100%;
+	height: auto;
 }
 
 #return-top {
@@ -51,6 +53,7 @@ canvas {
 }
 
 .cool-img:hover {
+	background-color: #ee5555;
 	border-color: #d30000;
 	cursor: pointer;
 	margin: 4px 0px 0px 4px;
@@ -58,6 +61,7 @@ canvas {
 }
 
 .cool-img:active {
+	background-color: #ee0000;
 	box-shadow: 3px 3px #282828;
 	margin: 6px 0px 0px 6px;
 	-webkit-transition-duration: 0s;
