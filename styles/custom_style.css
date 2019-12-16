@@ -8,6 +8,10 @@
 	src: url(../fonts/fantasquesansmono/fantasquesansmono-regular.otf);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 canvas {
 	/*padding-top: 100px;
 	padding-left: 150px;*/
@@ -33,10 +37,24 @@ canvas {
 	-webkit-transition-duration: 0.75s;
 }
 
+#return-top.magic-blue:hover {
+	background-color: #009cd8;
+	-webkit-transition-duration: 0.75s;
+}
+
 .consola {
 	border: 1px solid #999;
 	border-radius: 4px;
 	background: #f3f3f3;
+	font-size: 14px;
+	padding: 0.5em 0.75em;
+	text-align: justify;
+}
+
+.consola-dark {
+	border: 1px solid #999;
+	border-radius: 4px;
+	background: #3a3a3a;
 	font-size: 14px;
 	padding: 0.5em 0.75em;
 	text-align: justify;
@@ -130,6 +148,36 @@ canvas {
 	text-align: right;
 }
 
+li.guayota-list{
+	list-style: none;
+	padding-right: 4em;
+}
+
+li.guayota-list:before{
+	content: '';
+	display: inline-block;
+	height: 1.5em;
+	width: 1.5em;
+	padding-left: 2em;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+li.design-list:before{
+	background-image: url('/images/Guayota/magec_icon.png');
+}
+
+li.program-list:before{
+	background-image: url('/images/Guayota/achaman_icon.png');
+}
+
+li.art-list:before{
+	background-image: url('/images/Guayota/chaxiraxi_icon.png');
+}
+
+li.mkt-list:before{
+	background-image: url('/images/Guayota/guayota_icon.png');
+}
 
 .footer {
 	margin-top: 1rem;
@@ -159,6 +207,14 @@ a:active {
     text-decoration: none;
 }
 
+i.magic-blue {
+	color: white;
+}
+
+i.magic-blue:hover {
+	color: #009cd8;
+}
+
 #button{
 	font-family: Fantasque Sans Mono;
 	position: absolute;
@@ -174,13 +230,45 @@ a:active {
 
 #button:hover{
 	box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.63);
-	top: 80.1%;
 	cursor: pointer;
 }
 #button:active{
 	box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.63);
-	top: 81%;
 	cursor: pointer;
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+	background-color: rgba(255, 255, 255, 0);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px #666;
+	border-radius: 10px;
+}
+
+/* Track inactive*/
+::-webkit-scrollbar-track:window-inactive {
+	box-shadow: inset 0 0 5px rgba(100, 100, 100, 0.33);
+	border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #009cd8;
+	border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #0084b7;
+}
+
+/* Handle inactive */
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(0, 156, 216, 0.33);
 }
 
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }

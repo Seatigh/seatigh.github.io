@@ -18,13 +18,13 @@
 
 		<!-- Scripts -->
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 		<script src="/js/main.js"></script>
 	</head>
 	<body class="cool-text" style="background: black">
 		<!-- Return top button -->
-		<span id="return-top" title="Volver arriba"><i class="fas fa-angle-up fa-2x" style="color: white"></i></span>
+		<span id="return-top" class="magic-blue" title="Volver arriba"><i class="fas fa-angle-up fa-2x" style="color: white"></i></span>
 		<!-- Navbar -->
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container">
@@ -32,28 +32,29 @@
 					<img src="/images/marca.png" width="30" height="30" alt="Me, myself & I">
 					<span class="magic-blue">Me</span>, myself & I
 				</a>
-				<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav">
 						<li class="nav-item">
-				 			<a class="nav-link" href="#entrevista"><span class="magic-blue"></span><span class="sr-only">(current)</span></a>
+				 			<a class="nav-link" href="#equipo"><span class="magic-blue">EL</span><span class="sr-only">(current)</span> EQUIPO</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#cliente"><span class="magic-blue"></span></a>
+							<a class="nav-link" href="#narrativa"><span class="magic-blue">LA</span> NARRATIVA</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#llamada"><span class="magic-blue"></span></a>
+							<a class="nav-link" href="#desarrollo"><span class="magic-blue">EL</span> DESARROLLO</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#polemica"><span class="magic-blue"></span></a>
+							<a class="nav-link" href="#media"><span class="magic-blue">ME</span>DIA</a>
 						</li>
+
 						<li class="nav-item">
-							<a class="nav-link" href="#colmo"><span class="magic-blue"></span></a>
+							<a class="nav-link" href="#redes"><span class="magic-blue">LAS</span> REDES</a>
 						</li>
 					</ul>
-				</div> -->
+				</div>
 			</div>
 		</nav>
 		<div class="container" style="color: white">
@@ -62,14 +63,219 @@
 			</div>
 			<div class="row">
 				<div class=" col-md-12" style="margin-top: 2em; text-align: center">
-					<b><span class="magic-blue">Gu</span>ayota</b> es un videojuego de exploración y puzzles desarrollado por los alumnos de la Universidad Complutense de Madrid y Voxel School. Somos 4 trabajos de máster unidos en un único proyecto en el que se destacan las 4 principales características del desarrollo de videojuegos: <i>diseño</i>, <i>programación</i>, <i>arte</i> y <i>marketing</i>. Adicionalmente, en conlaboración con nosotros y como otro proyecto de máster, también se dispone de un departamento de audio el cual aporta la música y efectos sonoros del desarrollo. Todos juntos conformamos el equipo de desarrollo <b><span class="magic-blue">Te</span>am <span class="magic-blue">Oc</span>clusion</b></a>.
+					<b><span class="magic-blue">Gu</span>ayota</b> es un videojuego de exploración y puzzles desarrollado por los alumnos de la Universidad Complutense de Madrid y Voxel School. Somos 4 trabajos de máster unidos en un único proyecto en el que se destacan las 4 principales características del desarrollo de videojuegos: <i>diseño</i>, <i>programación</i>, <i>arte</i> y <i>marketing</i>. Adicionalmente, en colaboración con nosotros y como otro proyecto de máster, también se dispone de un departamento de audio el cual aporta la música y efectos sonoros del desarrollo. Todos juntos conformamos el equipo de desarrollo <b><span class="magic-blue">Te</span>am <span class="magic-blue">Oc</span>clusion</b></a>.
 				</div>
 			</div>
 			<div class="row">
 				<a href="https://twitter.com/TeamOcclusion" target="_blank" style="margin: 0 auto"><img src="/images/Guayota/logo_team_occlusion.png" alt="Team Occlusion" style="width: 20em"></a>
 			</div>
 			<div class="row">
+				<div class="col-lg-6 col-md-12">
+					<div id="equipo" class="text-center">
+						<h5><span class="magic-blue"><b>EL</span> EQUIPO</b></h5>
+					</div>
+					<div class="row">
+						<p>El grupo lo formamos en los primeros meses de master. Gracias a una game jam organizada por los directores de ambos másteres, pudimos conocernos mejor tanto personal como profesionalmente y escogimos a los compañeros con los que queríamos trabajar. En diciembre comenzamos a barajar las diferentes ideas de las cuales queríamos que tratase nuestro juego y a principios de año, el concepto estaba claro: una antorcha, árboles, isla desierta, oscuridad... y puzzles. De todo eso nació: <span><b><i><span class="magic-blue">A To</span>rch in the <span class="magic-blue">Wo</span>ods</i></b><span> y con el primer nombre del juego, su desarrollo.</p>
+					</div>
+					<div class="row">
+						<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+							<ol class="carousel-indicators">
+								<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+								<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+								<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+								<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+							</ol>
+							<div class="carousel-inner">
+								<div class="carousel-item active">
+									<img class="d-block w-100" src="/images/black_bg.png" alt="First slide">
+									<div class="carousel-caption d-none d-md-block">
+										<h4 style="color: #00ced6"><b>DISEÑO</b></h4>
+										<ul>
+											<li class="guayota-list design-list">Daniel Álamo</li>
+											<li class="guayota-list design-list">Ignacio Castellano</li>
+											<li class="guayota-list design-list">Sergio González</li>
+										</ul>
+									</div>
+								</div>
+								<div class="carousel-item">
+									<img class="d-block w-100" src="/images/black_bg.png" alt="First slide">
+									<div class="carousel-caption d-none d-md-block">
+										<h4 style="color: #faaa00"><b>PROGRAMACIÓN</b></h4>
+										<ul>
+											<li class="guayota-list program-list">Álvaro Rubio</li>
+											<li class="guayota-list program-list">Carlos Martínez</li>
+											<li class="guayota-list program-list">Mauro Lloret</li>
+											<li class="guayota-list program-list">Sergio Sánchez</li>
+											<li class="guayota-list program-list">Víctor M. Zamora</li>
+										</ul>
+									</div>
+								</div>
+								<div class="carousel-item">
+									<img class="d-block w-100" src="/images/black_bg.png" alt="First slide">
+									<div class="carousel-caption d-none d-md-block">
+										<h4 style="color: #658a01"><b>ARTE</b></h4>
+										<ul>
+											<li class="guayota-list art-list">Enrique Ituarte</li>
+											<li class="guayota-list art-list">Jacqueline Soler</li>
+											<li class="guayota-list art-list">Mercedes Tirado</li>
+											<li class="guayota-list art-list">Pedro Gil</li>
+										</ul>
+									</div>
+								</div>
+								<div class="carousel-item">
+									<img class="d-block w-100" src="/images/black_bg.png" alt="First slide">
+									<div class="carousel-caption d-none d-md-block">
+										<h4 style="color: #6a00b3"><b>MARKETING Y PRODUCCIÓN</b></h4>
+										<ul>
+											<li class="guayota-list mkt-list">Alfonso Jiménez</li>
+											<li class="guayota-list mkt-list">Álvaro Torres</li>
+											<li class="guayota-list mkt-list">Carolina Sánchez</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+							</a>
+							<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="sr-only">Next</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-12" style="margin: auto">
+					<img src="/images/Guayota/teamocclusion_team.png" alt="Equipo" style="width: 100%; padding: 1em">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6 col-md-12" style="margin: auto">
+					<img src="/images/Guayota/altar.png" alt="altar" style="width: 100%; padding: 1em">
+				</div>
+				<div class="col-lg-6 col-md-12">
+					<div id="narrativa" class="text-center"><h5><span class="magic-blue"><b>LA</span> NARRATIVA</b></h5></div>
+					<b><span class="magic-blue">Gu</span>ayota</b> no siempre fue <b><span class="magic-blue">Gu</span>ayota</b>. Cuando nació la idea del juego, su nombre era <i>A Torch in the Woods</i>. Y así duró unos 2-3 meses, hasta que nos dimos cuenta que los árboles no iban a tener tanta presencia en el juego como sí la tendría el maligno <b><span class="magic-blue">Gu</span>ayota</b>.
+					<div class="row" style="margin: 1em 0">
+						<div class="col-md-12 text-center">
+							<span class="consola-dark"><i>Pero, ¿de dónde sale este nombre?</i></span>
+						</div>
+					</div>
+					<b><span class="magic-blue">Gu</span>ayota</b> es un juego que está basado en la mitología canaria. Nuestra intención con el juego es contar parte de esta mitología y darla a conocer al mundo, al igual que se ha hecho con otras como la vikinga, la griega o la egipcia. El título proviene del nombre que daban los antiguos aborígenes de la isla de Tenerife a la entidad maligna o demonio: <b><span class="magic-blue">Gu</span>ayota</b>, el Destructor.
+					<div class="row" style="margin: 1em 0">
+						<div class="col-md-12 consola-dark">
+							<p style="margin: 0"><i>Para conocer más sobre la narrativa del juego y así descubrir la mitología canaria, qué mejor forma de hacerlo que jugando a <b><span class="magic-blue">Gu</span>ayota</b>. Seréis un explorador enviado a la misteriosa isla de Borande donde descubriréis todos los secretos que envuelven a este ser maligno... o moriréis en el intento. <b><span class="magic-blue">CONOCE GUAYOTA</span></b> <a href="#redes"><i class="fas fa-chevron-circle-down magic-blue"></i></a></i></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row" style="margin-top: 1em">
+				<div class="col-md-12">
+					<div id="desarrollo" class="text-center">
+						<h5><span class="magic-blue"><b>EL</span> DESARROLLO</b></h5>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-12" style="padding-top: 1em">
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+				</div>
+				<div class="col-lg-6 col-md-12">
+					<img src="/images/Guayota/bluestone_inmap.png" alt="Equipo" style="width: 100%; padding: 1em">
+				</div>
+			</div>
+			<div class="row" style="background: url('/images/Guayota/character_inmapx1140.png') no-repeat">
+				<div class="col-lg-3 col-md-12">
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum.
+				</div>
+				<div class="col-lg-6 col-md-12">
+					<!-- Relleno -->
+				</div>
+				<div class="col-lg-3 col-md-12">
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6 col-md-12">
+					<img src="/images/Guayota/character_and_bluestone_inmap.png" alt="Equipo" style="width: 100%">
+				</div>
+				<div class="col-lg-6 col-md-12">
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+				</div>
+			</div>
+			<div class="row" style="margin-top: 2em">
+				<div class="col-md-12">
+					<div id="media" class="text-center">
+						<h5><span class="magic-blue"><b>ME</span>DIA</b></h5>
+					</div>
+				</div>
+				<div class="row text-center">
+					<div class="col-lg-4 col-md-12">
+						<img src="/images/Guayota/guayota_figure.png" alt="Equipo" style="width: 100%; padding: 1em">
+					</div>
+					<div class="col-lg-8 col-md-12">
+						<img src="/images/Guayota/keyart.png" alt="Equipo" style="width: 100%; padding: 1em">
+					</div>
+				</div>
+				<div class="row text-center">
+					<div class="col-md-12">
+						<img src="/images/Guayota/ai_concept.png" alt="Equipo" style="width: 100%; padding: 1em">
+					</div>
+				</div>
+				<div class="row text-center">
+					<div class="col-md-2">
+						<div class="row">
+							<div class="col-md-12 col-sm-6">
+								<img src="/images/Guayota/magec_icon.png" alt="Equipo" style="width: 100%">
+							</div>
+							<div class="col-md-12 col-sm-6">
+								<img src="/images/Guayota/achaman_icon.png" alt="Equipo" style="width: 100%">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-8">
+						<img src="/images/Guayota/magec_4_madness_view.png" alt="Equipo" style="width: 100%; padding: 1em">
+					</div>
+					<div class="col-md-2">
+						<div class="row">
+							<div class="col-md-12 col-sm-6">
+								<img src="/images/Guayota/chaxiraxi_icon.png" alt="Equipo" style="width: 100%">
+							</div>
+							<div class="col-md-12 col-sm-6">
+								<img src="/images/Guayota/guayota_icon.png" alt="Equipo" style="width: 100%">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
 				<img src="/images/construccion_white.png" alt="en construcción" style="width: 100%">
+			</div>
+			<div class="row text-center">
+				<div class="col-md-12">
+					<div id="redes" class="text-center">
+						<h5><span class="magic-blue"><b>LAS</span> REDES</b></h5>
+					</div>
+				</div>
+				<div class="col-md-12">
+					Para saber más a cerca de <b><span class="magic-blue">Gu</span>ayota</b> visita nuestras redes sociales:
+				</div>
+				<div class="col-md-4"></div>
+				<div class="col-md-2 col-sm-2">
+					<a href="https://twitter.com/TeamOcclusion" target="_blank" style="padding: 0 1rem 0 1rem">
+						<i class="fab fa-twitter fa-3x social-media magic-blue"></i>
+					</a>
+				</div>
+				<div class="col-md-2 col-sm-2">
+					<a href="https://www.instagram.com/teamocclusion/" target="_blank" style="padding: 0 1rem 0 1rem">
+						<i class="fab fa-instagram fa-3x social-media magic-blue"></i>
+					</a>
+				</div>
+				<div class="col-md-4"></div>
+				<div class="col-md-12">
+					o mira nuestro trailer:
+					<div class="embed-responsive embed-responsive-16by9">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/YVUYLwJs-rk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
 			</div>
 			<div class="footer text-center" style="background-color: #0071ae">
 				Designed by <a class="social-media" href="/blog/aboutme.html">me</a>. Getting inspired by my <a class="social-media" href="/blog/resume_en.pdf" target="_blank">CV</a> (<a class="social-media" href="/blog/resume.pdf" target="_blank">spanish version</a>).
