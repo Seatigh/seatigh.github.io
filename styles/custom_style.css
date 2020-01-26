@@ -85,6 +85,23 @@ canvas {
 	-webkit-transition-duration: 0s;
 }
 
+.diary-head {
+	font-size: 3em;
+	text-align: center;
+}
+
+@media (min-width: 992px){
+	.diary-head {
+		padding: 2em 0;
+	}
+}
+
+@media (min-width: 1200px) {
+	.diary-head {
+		padding: 5em 0;
+	}
+}
+
 .separator {
 	border-top: 1px solid #606060;
 	border-bottom: 1px solid #606060;
