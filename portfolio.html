@@ -12,9 +12,9 @@
 			function check(event) {
 				console.log("Botón: " + event.button + "\n" + event.target.innerHTML);
 				var item = document.getElementById(event.target.innerHTML.toLowerCase());
-				if (event.button == 0) {
+				if (event.button == 2) {
 					item.classList.toggle("incorrect");
-				} else if (event.button == 2) {
+				} else if (event.button == 0) {
 					item.classList.toggle("correct");
 				} else {
 					console.log("Click derecho");
