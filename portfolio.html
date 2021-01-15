@@ -7,11 +7,29 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
 		<script type="text/javascript">
-			document.addEventListener('keypress', logKey);
+			document.addEventListener('keydown', logKey);
+
+			function check(event) {
+				console.log("Botón: " + event.button + "\n" + event.target.innerHTML);
+				var item = document.getElementById(event.target.innerHTML.toLowerCase());
+				if (event.button == 0) {
+					item.classList.toggle("incorrect");
+				} else if (event.button == 2) {
+					item.classList.toggle("correct");
+				} else {
+					console.log("Click derecho");
+				}
+			}
 
 			function logKey(e) {
-				var item = document.getElementById(String.fromCharCode(e.charCode).toLowerCase());
-				if (e.shiftKey) { // Incorrect
+				console.log(
+					"Key Pressed: " + String.fromCharCode(e.keyCode) + "\n"
+					+ "charCode: " + e.keyCode + "\n"
+					+ "SHIFT key pressed: " + e.shiftKey + "\n"
+					+ "ALT key pressed: " + e.altKey + "\n"
+				  );
+				var item = document.getElementById(String.fromCharCode(e.keyCode).toLowerCase());
+				if (e.altKey) { // Incorrect
 					item.classList.toggle("incorrect");
 				} else { // Correct
 					item.classList.toggle("correct");
@@ -133,31 +151,31 @@
 	<body>
 		<div class="contenedor">
 			<ul class="circulo">
-				<li id="a" class="item">A</li>
-				<li id="b" class="item">B</li>
-				<li id="c" class="item">C</li>
-				<li id="d" class="item">D</li>
-				<li id="e" class="item">E</li>
-				<li id="f" class="item">F</li>
-				<li id="g" class="item">G</li>
-				<li id="h" class="item">H</li>
-				<li id="i" class="item">I</li>
-				<li id="j" class="item">J</li>
-				<li id="k" class="item">K</li>
-				<li id="l" class="item">L</li>
-				<li id="m" class="item">M</li>
-				<li id="n" class="item">N</li>
-				<li id="o" class="item">O</li>
-				<li id="p" class="item">P</li>
-				<li id="q" class="item">Q</li>
-				<li id="r" class="item">R</li>
-				<li id="s" class="item">S</li>
-				<li id="t" class="item">T</li>
-				<li id="u" class="item">U</li>
-				<li id="v" class="item">V</li>
-				<li id="w" class="item">W</li>
-				<li id="y" class="item">Y</li>
-				<li id="z" class="item">Z</li>
+				<li id="a" class="item" onmousedown="check(event)">A</li>
+				<li id="b" class="item" onmousedown="check(event)">B</li>
+				<li id="c" class="item" onmousedown="check(event)">C</li>
+				<li id="d" class="item" onmousedown="check(event)">D</li>
+				<li id="e" class="item" onmousedown="check(event)">E</li>
+				<li id="f" class="item" onmousedown="check(event)">F</li>
+				<li id="g" class="item" onmousedown="check(event)">G</li>
+				<li id="h" class="item" onmousedown="check(event)">H</li>
+				<li id="i" class="item" onmousedown="check(event)">I</li>
+				<li id="j" class="item" onmousedown="check(event)">J</li>
+				<li id="k" class="item" onmousedown="check(event)">K</li>
+				<li id="l" class="item" onmousedown="check(event)">L</li>
+				<li id="m" class="item" onmousedown="check(event)">M</li>
+				<li id="n" class="item" onmousedown="check(event)">N</li>
+				<li id="o" class="item" onmousedown="check(event)">O</li>
+				<li id="p" class="item" onmousedown="check(event)">P</li>
+				<li id="q" class="item" onmousedown="check(event)">Q</li>
+				<li id="r" class="item" onmousedown="check(event)">R</li>
+				<li id="s" class="item" onmousedown="check(event)">S</li>
+				<li id="t" class="item" onmousedown="check(event)">T</li>
+				<li id="u" class="item" onmousedown="check(event)">U</li>
+				<li id="v" class="item" onmousedown="check(event)">V</li>
+				<li id="w" class="item" onmousedown="check(event)">W</li>
+				<li id="y" class="item" onmousedown="check(event)">Y</li>
+				<li id="z" class="item" onmousedown="check(event)">Z</li>
 			</ul>
 		</div>
 	</body>
