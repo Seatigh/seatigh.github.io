@@ -12,13 +12,21 @@
 			function check(event) {
 				console.log("Botón: " + event.button + "\n" + event.target.innerHTML);
 				var item = document.getElementById(event.target.innerHTML.toLowerCase());
+				var audio;
 				if (event.button == 2) {
 					item.classList.toggle("incorrect");
+					if (item.classList.contains("incorrect")) {
+						audio = new Audio("sounds/incorrect.mp3");
+					}
 				} else if (event.button == 0) {
 					item.classList.toggle("correct");
+					if (item.classList.contains("correct")) {
+						audio = new Audio("sounds/correct.mp3");
+					}
 				} else {
 					console.log("Click derecho");
 				}
+				audio.play();
 			}
 
 			function logKey(e) {
@@ -167,13 +175,13 @@
 				<li id="n" class="item" onmousedown="check(event)">N</li>
 				<li id="o" class="item" onmousedown="check(event)">O</li>
 				<li id="p" class="item" onmousedown="check(event)">P</li>
-				<li id="q" class="item" onmousedown="check(event)">Q</li>
 				<li id="r" class="item" onmousedown="check(event)">R</li>
 				<li id="s" class="item" onmousedown="check(event)">S</li>
 				<li id="t" class="item" onmousedown="check(event)">T</li>
 				<li id="u" class="item" onmousedown="check(event)">U</li>
 				<li id="v" class="item" onmousedown="check(event)">V</li>
 				<li id="w" class="item" onmousedown="check(event)">W</li>
+				<li id="x" class="item" onmousedown="check(event)">X</li>
 				<li id="y" class="item" onmousedown="check(event)">Y</li>
 				<li id="z" class="item" onmousedown="check(event)">Z</li>
 			</ul>
