@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../css/styles.css">
+		<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
+		<script type="text/javascript"></script>
+		<title>Seatigh</title>
+	</head>
+	<body>
+		<div style="width: 50%; float: left;">
+			<img src="img/black_square.png" name="canvas" style="height: 800px">
+		</div>
+		<div style="width: 50%; float: left;">
+			<div style="width: 100%">
+				<ul>
+					<form>
+						<li><input type="button" name="option1" value="" onclick="check(this)"></li>
+						<li><input type="button" name="option2" value="" onclick="check(this)"></li>
+						<li><input type="button" name="option3" value="" onclick="check(this)"></li>
+						<li><input type="button" name="option4" value="" onclick="check(this)"></li>
+						<li><input type="button" name="option5" value="" onclick="check(this)"></li>
+					</form>
+				</ul>
+			</div>
+			<div style="width: 100%">
+				<form>
+					<input id="next" type="button" name="next" onclick="nextImage()" value="Siguiente">
+				</form>
+			</div>
+			<div style="width: 100%">
+				<h1 id="answer"></h1>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var images = ["Aiming", "BiuBiu", "Mark", "Meteor", "Zeka", "Clearlove", "Flandre", "Jiejie", "Meiko", "Scout", "Viper", "H4cker", "Insulator", "irma", "Rat", "zs", "Bo", "Crisp", "Doinb", "Lwx", "Nuguri", "Tian", "Baolan", "Lucas", "Puff", "Rookie", "Theshy", "Wink", "Xun", "Kanavi", "Loken", "Lvmao", "Xiye", "Yagao", "Zoom", "Cult", "Garvey", "Kramer", "Kui", "Uniboy", "Icon", "Iwandy", "Light", "M1kuya", "Tarzan", "Aki", "Cold", "Eric", "New", "Wuming", "Aix", "Cube", "FoFo", "Hang", "iBoy", "Leyan", "Cryin", "Gala", "Ming", "Wei", "Xiaohu", "Forge", "Haro", "Kelin", "Michi", "Qiuqiu", "Ziv", "Angel", "Bin", "Huanfeng", "ON", "Sofm", "Beishang", "Breathe", "Jiumeng", "Missing", "Shanks", "369", "JackeyLove", "Karsa", "Knight", "Zhuo", "Captain", "Chelizi", "Teen", "Twila", "Xiaopeng", "Langx", "Mole", "ppGod", "Weiwei", "y4"];
+		var dir = "img/Jugadores/";
+		var ext = ".png"
+		var correct = "";
+
+		function nextImage() {
+			document.getElementById("answer").innerHTML = "";
+			var num = Math.floor(Math.random() * (images.length + 1));
+			var order =  Math.floor(Math.random() * 5);
+			document.canvas.src = dir + images[num] + ext;
+			document.getElementsByName("option" + ((order++ % 5) + 1))[0].value = images[(num + Math.floor(Math.random() * (images.length + 1))) % images.length];
+			document.getElementsByName("option" + ((order++ % 5) + 1))[0].value = images[(num + Math.floor(Math.random() * (images.length + 1))) % images.length];
+			document.getElementsByName("option" + ((order++ % 5) + 1))[0].value = images[num];
+			document.getElementsByName("option" + ((order++ % 5) + 1))[0].value = images[(num + Math.floor(Math.random() * (images.length + 1))) % images.length];
+			document.getElementsByName("option" + ((order++ % 5) + 1))[0].value = images[(num + Math.floor(Math.random() * (images.length + 1))) % images.length];
+			correct = images[num];
+		}
+
+		function check(elem){
+			var ans = document.getElementById("answer");
+			if (elem.value == correct) {
+				console.log("Correcto!");
+				ans.innerHTML = "Correcto!";
+				sleep(2000).then(() => { document.getElementById("next").click(); });
+			} else {
+				console.log("Error!");
+				ans.innerHTML = "Error!";
+			}
+		}
+
+		function sleep(ms) {
+			return new Promise(resolve => setTimeout(resolve, ms));
+		}
+	</script>
+</htlm>

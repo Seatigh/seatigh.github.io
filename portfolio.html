@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="js/control.js"></script>
+		
+		<title>Seatigh portfolio</title>
+		<script type="text/javascript">
+		$(document).ready(function() {
+			$("[lang='sp']").hide();
+			$("[lang='en']").show();
+			$("#sp").show();
+			$("#en").hide();
+
+			$(".percent").each(function() {
+				$circle = $(this).find("circle").eq(2).css("stroke-dashoffset", "calc(220 - (220 * " + $(this).data("percent") + ") / 100)");
+			});
+
+			$(".lang_img").click(function() {
+				var lang = $(this).attr("id");
+				switch(lang) {
+					case 'en':
+						console.log("inglés");
+						$("[lang='sp']").hide();
+						$("[lang='en']").show();
+						$("#sp").show();
+						$("#en").hide();
+					break;
+					case 'sp':
+						console.log("español");
+						$("[lang='en']").hide();
+						$("[lang='sp']").show();
+						$("#en").show();
+						$("#sp").hide();
+					break;
+					default:
+						console.log('inglés');
+						$("[lang='sp']").hide();
+						$("[lang='en']").show();
+						$("#sp").show();
+						$("#en").hide();
+				}
+			});
+		});
+	</script>
+	</head>
+	<body style="background-color: #400a46 !important;">
+		<video class="bg-video" playsinline autoplay muted loop poster="" id="bgvid">
+			<!-- <source src="polina.webm" type="video/webm"> -->
+			<source src="videos/coding_bg.mp4" type="video/mp4">
+		</video>
+		<div id="back-btn" class="back-btn">
+			<a href="../"><i class="fas fa-2x fa-backspace"></i></a>
+		</div>
+		<div id="lang" style="position: absolute; top: 1em; right: 1em;">
+			<img id="sp" class="lang_img" src="img/spain_flag.jpg" alt="Español">
+			<img id="en" class="lang_img" src="img/uk_flag.jpg" alt="English">
+		</div>
+		<div class="container center">
+			<div id="main-info" class="center">
+				<div id="header-img" class="row center">
+					<!-- Image -->
+					<img src="img/profile.jpg">
+				</div>
+				<div class="row">
+					<div class="title center">Álvaro Rubio</div>
+				</div>
+				<div class="row">
+					<!-- Position info (type machine script) -->
+					<div id="positions"></div>
+				</div>
+				<div class="row">
+					<div class="contacts"><i class="fas fa-envelope"></i>arubiocastellano@gmail.com | <a href="https://www.linkedin.com/in/%C3%A1lvaro-rubio-castellano-07b517118/" target="_blank"><i class="fab fa-linkedin"></i>Álvaro Rubio</a> | <a href="https://github.com/Seatigh" target="_blank"><i class="fab fa-github"></i>seatigh</a> | <a href="https://www.twitter.com/seatigh__" target="_blank"><i class="fab fa-twitter"></i>@seatigh__</a></div>
+				</div>
+				<div class="row">
+					<!-- Tags -->
+					<div id="about-tag-en" class="tag selected" lang="en">About Me</div>
+					<div id="about-tag-sp" class="tag selected" lang="sp">Sobre Mi</div>
+					<div id="resume-tag-en" class="tag" lang="en">Resume</div>
+					<div id="resume-tag-sp" class="tag" lang="sp">Curriculum</div>
+					<div id="works-tag-en" class="tag" lang="en">Works</div>
+					<div id="works-tag-sp" class="tag" lang="sp">Trabajos</div>
+					<div id="hobbies-tag-en" class="tag" lang="en">Hobbies</div>
+					<div id="hobbies-tag-sp" class="tag" lang="sp">Aficiones</div>
+				</div>
+			</div>
+			<div id="about-me" class="info-card card-visible">
+				<div class="container-x1 n-col">
+					<!--<h2 class="" style="color: white; font-size: 1.75em; align-self: flex-start; margin-bottom: 0"><span style="color: var(--yellow-l);">Class</span> About Me<span style="font-weight: 400">:</span></h2>
+					<div class="n-row">
+						<div class="n-col" style="margin-left: 1em; color: white">
+							<span><span style="color: var(--purple-d); font-weight: bold">String</span> name = <span style="color: #F68D64">"Álvaro"</span>;</span>
+							<span><span style="color: #F57B7A; font-weight: bold">int</span> age = <span style="color: #07285d">26</span>;</span>
+							<span><span style="color: var(--purple-d); font-weight: bold">String</span> education = <span style="color: #F68D64">"Computer Science Engineer"</span>;</span>
+							<span><span style="color: var(--purple-d); font-weight: bold">String</span> current_position = <span style="color: #F68D64">"Available/Freelance"</span>;</span>
+							<span><span style="color: #A395F5; font-weight: bold">Location</span> residency = <span style="color: #F5E028">Madrid, Spain</span>;</span>
+						</div>
+						<div class="n-col" style="margin-left: 1em; color: white">
+							<span><span style="color: #F567E9; font-weight: bold">List</span> knowledge = {<br>
+								<span style="color: #F68D64; margin-left: 1em">"Programming"</span>,<br>
+								<span style="color: #F68D64; margin-left: 1em">"AI"</span>,<br>
+								<span style="color: #F68D64; margin-left: 1em">"Videogame development"</span>,<br>
+								<span style="color: #F68D64; margin-left: 1em">"Front-end"</span>,<br>
+								<span style="color: #F68D64; margin-left: 1em">"Back-end"</span>};</span>
+						</div>
+					</div>-->
+					<div class="n-col">
+						<h2 class="card-title" lang="en">About Me</h2>
+						<h2 class="card-title" lang="sp">Sobre Mi</h2>
+						<div class="n-row">
+							<div style="max-width: 30em">
+								<p style="text-align: justify; color: white; font-weight: 400; margin-top: 0" lang="en">My name is <span style="font-weight: bold; color: var(--yellow-l)">Álvaro</span> and I'm a <span style="font-weight: bold; color: var(--yellow-l)">computer science engineer</span>. My main formation is about <span style="font-weight: bold; color: var(--yellow-l)">programming</span> and <span style="font-weight: bold; color: var(--yellow-l)">AI</span> knowledge, but also <span style="font-weight: bold; color: var(--yellow-l)">videogame development</span>. I have improve my programming skills in both <span style="font-weight: bold; color: var(--yellow-l)">front-end</span> and <span style="font-weight: bold; color: var(--yellow-l)">back-end</span>.</p>
+								<p style="text-align: justify; color: white; font-weight: 400; margin-top: 0" lang="sp">Me llamo <span style="font-weight: bold; color: var(--yellow-l)">Álvaro</span> y soy <span style="font-weight: bold; color: var(--yellow-l)">ingeniero informático</span>. Mi formación principal es en conocimientos de <span style="font-weight: bold; color: var(--yellow-l)">programación</span> e <span style="font-weight: bold; color: var(--yellow-l)">IA</span>, pero también en <span style="font-weight: bold; color: var(--yellow-l)">desarrollo de videojuegos</span>. A día de hoy manejo programación en <span style="font-weight: bold; color: var(--yellow-l)">front-end</span> y <span style="font-weight: bold; color: var(--yellow-l)">back-end</span>.</p>
+							</div>
+							<div>
+								<ul class="pers-info">
+									<li lang="en"><b>Age:</b> <span style="color: white">26</span></li>
+									<li lang="sp"><b>Edad:</b> <span style="color: white">26</span></li>
+									<li lang="en"><b>Current position:</b> <span style="color: white">Available/Freelance</span></li>
+									<li lang="sp"><b>Posición actual:</b> <span style="color: white">Desempleado/Freelance</span></li>
+									<li lang="en"><b>Residency:</b> <span style="color: white">Madrid, Spain</span></li>
+									<li lang="sp"><b>Residencia:</b> <span style="color: white">Madrid, España</span></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="n-col">
+						<h2 class="card-title" lang="en">Servicies</h2>
+						<h2 class="card-title" lang="sp">Servicios</h2>
+						<div class="n-row" style="width: 58em; align-items: baseline;">
+							<div class="service">
+								<img src="img/nes_controller_pixel.png" alt="Game Development" style="width: 10em; align-self: center;">
+								<h4 lang="en">Game Development</h4>
+								<h4 lang="sp">Desarrollo de Videojuegos</h4>
+							</div>
+							<div class="service">
+								<img src="img/logos/ai_logo.png" alt="Web Development" style="width: 10em; align-self: center;">
+								<h4 lang="en">AI Programming</h4>
+								<h4 lang="sp">Programación de IA</h4>
+							</div>
+							<div class="service">
+								<img src="img/programming_logo.png" alt="General Programming" style="width: 10em; align-self: center;">
+								<h4 lang="en">App/Web Programming</h4>
+								<h4 lang="sp">Programación de Apps</h4>
+							</div>
+							<div class="service">
+								<img src="img/microphone_icon.png" alt="Esports Caster" style="width: 10em; align-self: center;">
+								<h4 lang="en">Esports Caster</h4>
+								<h4 lang="sp">Comentarista</h4>
+							</div>
+						</div>
+					</div>
+					<div class="n-col">
+						<h2 class="card-title">Quote</h2>
+						<div class="n-col" style="width: 58em; justify-content: center; align-items: center;">
+							<div class="n-row" style="align-items: center">
+								<i class="fas fa-quote-left" style="margin-right: 1em"></i>
+								<p style="margin: 0" lang="en"><i>Do or do not. There is no try.</i></p>
+								<p style="margin: 0" lang="sp"><i>Hazlo o no lo hagas. No lo intentes.</i></p>
+								<i class="fas fa-quote-right" style="margin-left: 1em"></i>
+							</div>
+							<p lang="en"><b>Master Yoda</b></p>
+							<p lang="sp"><b>Maestro Yoda</b></p>
+							<img src="img/master_yoda.jpg" alt="Master Yoda" style="width: 5em; border-radius: 50%">
+						</div>
+					</div>
+				</div>	
+			</div>
+			<div id="resume" class="info-card card-hidden">
+				<div class="container-x1">
+					<div id="studies" class="">
+						<h2 class="card-title" style="margin-bottom: 0" lang="en">Studies</h2>
+						<h2 class="card-title" style="margin-bottom: 0" lang="sp">Estudios</h2>
+						<div class="n-row container-x1">
+							<div class="n-col half-width">
+								<h3 class="card-subtitle" lang="en"><span class="mark-text">Game Development</span> Master's Degree</h3>
+								<h3 class="card-subtitle" lang="sp">Máster en <span class="mark-text">Desarrollo de Videojuegos</span></h3>
+								<div class="n-col">
+									<div class="n-row" style="justify-content: flex-start; margin-top: 0.5em">
+										<div class="year">2018-2019</div>
+										<div class="location" lang="en">UCM - Madrid, Spain</div>
+										<div class="location" lang="sp">UCM - Madrid, España</div>
+									</div>
+									<span style="color: white; margin-top: 0.5em" lang="en">Master's Degree expecialiced in Programming passed with Honorable Mention.</span>
+									<span style="color: white; margin-top: 0.5em" lang="sp">Máster especializado en Programación completado con Mención de Honor.</span>
+								</div>
+							</div>
+							<div class="n-col half-width">
+								<h3 class="card-subtitle" lang="en"><span class="mark-text">Computer Science</span> Bachelor's Degree</h3>
+								<h3 class="card-subtitle" lang="sp">Grado en <span class="mark-text">Ingeniería Informática</span></h3>
+								<div class="n-col">
+									<div class="n-row" style="justify-content: flex-start; margin-top: 0.5em">
+										<div class="year">2012-2017</div>
+										<div class="location" lang="en">UC3M - Leganes, Spain</div>
+										<div class="location" lang="sp">UC3M - Leganés, España</div>
+									</div>
+									<span style="color: white; margin-top: 0.5em" lang="en">Bachelor's Degree expecialiced in Artificial Inteligence.</span>
+									<span style="color: white; margin-top: 0.5em" lang="sp">Grado con especialización en Inteligencia Artificial.</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="experience" class="">
+						<h2 class="card-title" style="margin-bottom: 0" lang="en">Experience</h2>
+						<h2 class="card-title" style="margin-bottom: 0" lang="sp">Experiencia</h2>
+						<div class="n-row container-x1">
+							<div class="n-col half-width">
+								<h3 class="card-subtitle" lang="en"><span class="mark-text">Freelance Programmer</span> Sngular</h3>
+								<h3 class="card-subtitle" lang="sp"><span class="mark-text">Programador freelance</span> Sngular</h3>
+								<div class="n-col">
+									<div class="n-row" style="justify-content: flex-start; margin-top: 0.5em">
+										<div class="year">2021</div>
+										<div class="location" lang="en">Leganes, Spain</div>
+										<div class="location" lang="sp">Leganés, España</div>
+									</div>
+									<span style="color: white; margin-top: 0.5em" lang="en">Freelance programmer developing interactive applications for Qatar National Museum with Unity 3D and C#.</span>
+									<span style="color: white; margin-top: 0.5em" lang="sp">Programador freelance desarrollando aplicaciones interactivas para el Museo Nacional de Qatar usando Unity 3D y C#.</span>
+								</div>
+							</div>
+							<div class="n-col half-width">
+								<h3 class="card-subtitle" lang="en"><span class="mark-text">IT Analyst</span> Minsait</h3>
+								<h3 class="card-subtitle" lang="sp"><span class="mark-text">Analista Programador</span> Minsait</h3>
+								<div class="n-col">
+									<div class="n-row" style="justify-content: flex-start; margin-top: 0.5em">
+										<div class="year">2018-2018</div>
+										<div class="location" lang="en">Madrid, Spain</div>
+										<div class="location" lang="sp">Madrid, España</div>
+									</div>
+									<span style="color: white; margin-top: 0.5em" lang="en">Junior analyst working for a client (ADIF). Webapp development using HTML, CSS, Java and Javascript.</span>
+									<span style="color: white; margin-top: 0.5em" lang="sp">Analista junior trabajando en cliente (ADIF). Desarrollo de aplicaciones web con HTML, CSS, Java y Javascript.</span>
+								</div>
+							</div>
+						</div>
+						<div class="n-row container-x1" style="justify-content: flex-start;">
+							<div class="n-col half-width">
+								<h3 class="card-subtitle" lang="en"><span class="mark-text">Helpdesk Support</span> UC3M</h3>
+								<h3 class="card-subtitle" lang="sp"><span class="mark-text">Soporte Aulas docentes</span> UC3M</h3>
+								<div class="n-col">
+									<div class="n-row" style="justify-content: flex-start; margin-top: 0.5em">
+										<div class="year">2017-2017</div>
+										<div class="location" lang="en">Leganes, Spain</div>
+										<div class="location" lang="sp">Leganés, España</div>
+									</div>
+									<span style="color: white; margin-top: 0.5em" lang="en">Giving support to teachers with software and hardware problems at the classrooms.</span>
+									<span style="color: white; margin-top: 0.5em" lang="sp">Dar soporte a los profesores en las aulas con problemas de software y hardware.</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="skills" class="">
+						<h2 class="card-title" style="margin-bottom: 0" lang="en">Skills</h2>
+						<h2 class="card-title" style="margin-bottom: 0" lang="sp">Conocimientos</h2>
+						<div class="n-col container-x1">
+							<div class="n-col">
+								<h3 class="card-subtitle" lang="en"><span class="mark-text">Programming</span> Languages</h3>
+								<h3 class="card-subtitle" lang="sp">Lenguajes de <span class="mark-text">Programación</span></h3>
+								<div class="n-col container-x1">
+									<div class="n-row">
+										<!-- JAVA -->
+										<!--<div id="java-emblem" class="emblem">
+											<div class="emblem-circle">
+												<img class="img-emblem center" src="img/logos/java-logo.png">
+											</div>
+											<div class="exp-bar-cont center">
+												<div class="exp-bar"></div>
+											</div>
+										</div>-->
+										<div class="n-col" style="justify-content: center; align-items: center;">
+											<div class="percent" data-percent="90">
+												<svg>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+												</svg>
+												<div class="image">
+													<img src="img/icons/java_icon.png" height="64px">
+												</div>
+											</div>
+											<h4 style="text-align: center; color: white; margin: 0.5em 0 1em 0;">Java</h4>
+										</div>
+											
+										<!-- HTML -->
+										<!--<div id="html-emblem" class="emblem">
+											<div class="emblem-circle">
+												<img class="img-emblem center" src="img/logos/html-logo.png">
+											</div>
+											<div class="exp-bar-cont center">
+												<div class="exp-bar"></div>
+											</div>
+										</div>-->
+										<div class="n-col" style="justify-content: center; align-items: center;">
+											<div class="percent" data-percent="80">
+												<svg>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+												</svg>
+												<div class="image">
+													<img src="img/icons/html_icon.png" height="64px">
+												</div>
+											</div>
+											<h4 style="text-align: center; color: white; margin: 0.5em 0 1em 0;">HTML</h4>
+										</div>
+											
+										<!-- CSS -->
+										<!--<div id="css-emblem" class="emblem">
+											<div class="emblem-circle">
+												<img class="img-emblem center" src="img/logos/css-logo.png">
+											</div>
+											<div class="exp-bar-cont center">
+												<div class="exp-bar"></div>
+											</div>
+										</div>-->
+										<div class="n-col" style="justify-content: center; align-items: center;">
+											<div class="percent" data-percent="60">
+												<svg>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+												</svg>
+												<div class="image">
+													<img src="img/icons/css_icon.png" height="64px">
+												</div>
+											</div>
+											<h4 style="text-align: center; color: white; margin: 0.5em 0 1em 0;">CSS</h4>
+										</div>
+										<!-- JAVASCRIPT -->
+										<!--<div id="js-emblem" class="emblem">
+											<div class="emblem-circle">
+												<img class="img-emblem center" src="img/logos/js-logo.png">
+											</div>
+											<div class="exp-bar-cont center">
+												<div class="exp-bar"></div>
+											</div>
+										</div>-->
+										<div class="n-col" style="justify-content: center; align-items: center;">
+											<div class="percent" data-percent="70">
+												<svg>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+												</svg>
+												<div class="image">
+													<img src="img/icons/js_icon.jpg" height="64px" style="border-radius: 50%;">
+												</div>
+											</div>
+											<h4 style="text-align: center; color: white; margin: 0.5em 0 1em 0;">Javascript</h4>
+										</div>
+										<!-- SQL -->
+										<!--<div id="sql-emblem" class="emblem">
+											<div class="emblem-circle">
+												<img class="img-emblem center" src="img/logos/sql-logo.png">
+											</div>
+											<div class="exp-bar-cont center">
+												<div class="exp-bar"></div>
+											</div>
+										</div>-->
+										<div class="n-col" style="justify-content: center; align-items: center;">
+											<div class="percent" data-percent="75">
+												<svg>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+												</svg>
+												<div class="image">
+													<img src="img/icons/sql_icon.png">
+												</div>
+											</div>
+											<h4 style="text-align: center; color: white; margin: 0.5em 0 1em 0;">SQL</h4>
+										</div>
+									</div>
+									<div class="n-row">
+										<!-- PYTHON -->
+										<!--<div id="python-emblem" class="emblem">
+											<div class="emblem-circle">
+												<img class="img-emblem center" src="img/logos/python-logo.png">
+											</div>
+											<div class="exp-bar-cont center" data-text="exp">
+												<div class="exp-bar"></div>
+											</div>
+										</div>-->
+										<div class="n-col" style="justify-content: center; align-items: center;">
+											<div class="percent" data-percent="50">
+												<svg>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+												</svg>
+												<div class="image">
+													<img src="img/icons/py_icon.png">
+												</div>
+											</div>
+											<h4 style="text-align: center; color: white; margin: 0.5em 0 1em 0;">Python</h4>
+										</div>
+										<!-- C -->
+										<!--<div id="c-emblem" class="emblem">
+											<div class="emblem-circle">
+												<img class="img-emblem center" src="img/logos/c-logo.png">
+											</div>
+											<div class="exp-bar-cont center">
+												<div class="exp-bar"></div>
+											</div>
+										</div>-->
+										<div class="n-col" style="justify-content: center; align-items: center;">
+											<div class="percent" data-percent="70">
+												<svg>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+												</svg>
+												<div class="image">
+													<img src="img/icons/c_icon.png">
+												</div>
+											</div>
+											<h4 style="text-align: center; color: white; margin: 0.5em 0 1em 0;">C</h4>
+										</div>
+										<!-- C# -->
+										<!--<div id="csharp-emblem" class="emblem">
+											<div class="emblem-circle">
+												<img class="img-emblem center" src="img/logos/csharp-logo.png">
+											</div>
+											<div class="exp-bar-cont center">
+												<div class="exp-bar"></div>
+											</div>
+										</div>-->
+										<div class="n-col" style="justify-content: center; align-items: center;">
+											<div class="percent" data-percent="45">
+												<svg>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+												</svg>
+												<div class="image">
+													<img src="img/icons/csharp_icon.png">
+												</div>
+											</div>
+											<h4 style="text-align: center; color: white; margin: 0.5em 0 1em 0;">C#</h4>
+										</div>
+										<!-- C++ -->
+										<!--<div id="cpp-emblem" class="emblem">
+											<div class="emblem-circle">
+												<img class="img-emblem center" src="img/logos/cpp-logo.png">
+											</div>
+											<div class="exp-bar-cont center">
+												<div class="exp-bar"></div>
+											</div>
+										</div>-->
+										<div class="n-col" style="justify-content: center; align-items: center;">
+											<div class="percent" data-percent="40">
+												<svg>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+												</svg>
+												<div class="image">
+													<img src="img/icons/cpp_icon.png">
+												</div>
+											</div>
+											<h4 style="text-align: center; color: white; margin: 0.5em 0 1em 0;">C++</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="n-col">
+								<h3 class="card-subtitle" lang="en"><span class="mark-text">Game</span> Engines</h3>
+								<h3 class="card-subtitle" lang="sp">Motores de <span class="mark-text">Videojuegos</span></h3>
+								<div class="n-col container-x1">
+									<div class="n-row">
+										<div class="n-col" style="justify-content: center; align-items: center;">
+											<div class="percent" data-percent="60">
+												<svg>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+												</svg>
+												<div class="image">
+													<img src="img/icons/ue_icon.png">
+												</div>
+											</div>
+											<h4 style="text-align: center; color: white; margin: 0.5em 0 1em 0;">Unreal Engine</h4>
+										</div>
+										<div class="n-col" style="justify-content: center; align-items: center;">
+											<div class="percent" data-percent="45">
+												<svg>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+												</svg>
+												<div class="image">
+													<img src="img/icons/unity_icon.png">
+												</div>
+											</div>
+											<h4 style="text-align: center; color: white; margin: 0.5em 0 1em 0;">Unity 3D</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="n-col">
+								<h3 class="card-subtitle" lang="en"><span class="mark-text">Language</span></h3>
+								<h3 class="card-subtitle" lang="sp"><span class="mark-text">Idiomas</span></h3>
+								<div class="n-col container-x1">
+									<div class="n-row">
+										<div class="n-col" style="justify-content: center; align-items: center;">
+											<div class="percent" data-percent="95">
+												<svg>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+												</svg>
+												<div class="image">
+													<img src="img/icons/esp_icon.jpg">
+												</div>
+											</div>
+											<h4 style="text-align: center; color: white; margin: 0.5em 0 1em 0;" lang="en">Spanish</h4>
+											<h4 style="text-align: center; color: white; margin: 0.5em 0 1em 0;" lang="sp">Español</h4>
+										</div>
+										<div class="n-col" style="justify-content: center; align-items: center;">
+											<div class="percent" data-percent="70">
+												<svg>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+												</svg>
+												<div class="image">
+													<img src="img/icons/eng_icon.jpg">
+												</div>
+											</div>
+											<h4 style="text-align: center; color: white; margin: 0.5em 0 1em 0;" lang="en">English</h4>
+											<h4 style="text-align: center; color: white; margin: 0.5em 0 1em 0;" lang="sp">Inglés</h4>
+										</div>
+										<div class="n-col" style="justify-content: center; align-items: center;">
+											<div class="percent" data-percent="20">
+												<svg>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+												</svg>
+												<div class="image">
+													<img src="img/icons/it_icon.jpg">
+												</div>
+											</div>
+											<h4 style="text-align: center; color: white; margin: 0.5em 0 1em 0;" lang="en">Italian</h4>
+											<h4 style="text-align: center; color: white; margin: 0.5em 0 1em 0;" lang="sp">Italiano</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="n-col">
+								<h3 class="card-subtitle" lang="en"><span class="mark-text">Operative</span> Systems</h3>
+								<h3 class="card-subtitle" lang="sp">Sistemas <span class="mark-text">Operativos</span></h3>
+								<div class="n-col container-x1">
+									<div class="n-row">
+										<div class="n-col" style="justify-content: center; align-items: center;">
+											<div class="percent" data-percent="90">
+												<svg>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+												</svg>
+												<div class="image">
+													<img src="img/icons/win_icon.png">
+												</div>
+											</div>
+											<h4 style="text-align: center; color: white; margin: 0.5em 0 1em 0;">Windows</h4>
+										</div>
+										<div class="n-col" style="justify-content: center; align-items: center;">
+											<div class="percent" data-percent="40">
+												<svg>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+													<circle cx="35" cy="35" r="35"></circle>
+												</svg>
+												<div class="image">
+													<img src="img/icons/linux_icon.png">
+												</div>
+											</div>
+											<h4 style="text-align: center; color: white; margin: 0.5em 0 1em 0;">Linux</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="works" class="info-card card-hidden">
+				<div class="container-x1">
+					<div id="games" class="">
+						<h2 class="card-title" style="margin-bottom: 0" lang="en">Games</h2>
+						<h2 class="card-title" style="margin-bottom: 0" lang="sp">Juegos</h2>
+						<div class="n-row container-x1" style="align-items: center;">
+							<a href="blog/Guayota.html" target="_blank"><img src="img/logos/guayota_logo.png" width="400px" style="filter: drop-shadow(0px 0px 5px black);"></a>
+							<p style="text-align: justify; color: white; font-weight: 400; margin-top: 0" lang="en">
+								<span style="font-weight: bold; color: var(--yellow-l)">Guayota</span> is an exploration/puzzle videogame inspired by 
+								<span style="font-weight: bold; color: var(--yellow-l)">Canarian mythology</span>. It was started as a master's degree final work made by 
+								<span style="font-weight: bold; color: var(--yellow-l)">UCM</span> and 
+								<span style="font-weight: bold; color: var(--yellow-l)">Voxel School</span> students. Right now, only 4 persons and the audio department continue with the development to finish it by 
+								<span style="font-weight: bold; color: var(--yellow-l)">the end of 2021</span>.
+							</p>
+							<p style="text-align: justify; color: white; font-weight: 400; margin-top: 0" lang="sp">
+								<span style="font-weight: bold; color: var(--yellow-l)">Guayota</span> es un videojuego de exploración y puzzles basado en 
+								<span style="font-weight: bold; color: var(--yellow-l)">mitología canaria</span>. Se inició como un proyecto de fin de máster de los alumnos de la 
+								<span style="font-weight: bold; color: var(--yellow-l)">UCM</span> y de 
+								<span style="font-weight: bold; color: var(--yellow-l)">Voxel School</span>. A día de hoy, continuamos el proyecto 4 personas y el departamento de audio para acabarlo 
+								<span style="font-weight: bold; color: var(--yellow-l)">a finales de 2021.</span>.</p>
+						</div>
+					</div>
+					<div id="apps" class="">
+						<h2 class="card-title" style="margin-bottom: 0" lang="en">Apps</h2>
+						<h2 class="card-title" style="margin-bottom: 0" lang="sp">Applicaciones</h2>
+						<div class="n-row container-x1" style="align-items: center; margin-top: 1em;">
+							<!-- FACTURAS -->
+							<video src="videos/invoices_app.mp4" autoplay muted style="width: 45%; margin-right: 1em;"></video>
+							<p style="text-align: justify; color: white; font-weight: 400; margin-top: 0" lang="en">
+								I have made a <span style="font-weight: bold; color: var(--yellow-l)">desktop application</span> for Windows to take control of the 
+								<span style="font-weight: bold; color: var(--yellow-l)">invoices for freelancers</span>.
+								<br><br>
+								You can <span style="font-weight: bold; color: var(--yellow-l)">add, search, modify and remove</span> invoices. Also, you can have control of the different clients by adding them (future features: edit and remove clients).
+								<br><br>
+								Additionally, there are two tabs to check the <span style="font-weight: bold; color: var(--yellow-l)">entries and the outlays</span> by client or by period.
+								<br><br>
+								This application works with an <span style="font-weight: bold; color: var(--yellow-l)">internal data base</span> created at the first time you use it. You can create new data bases if you need to control the invoices of another personal activity.
+							</p>
+							<p style="text-align: justify; color: white; font-weight: 400; margin-top: 0" lang="sp">
+								He hecho una <span style="font-weight: bold; color: var(--yellow-l)">aplicación de escritorio para Windows</span> para poder llevar el control de las 
+								<span style="font-weight: bold; color: var(--yellow-l)">facturas</span> de un autónomo o empresa.
+								<br><br>
+								Puedes <span style="font-weight: bold; color: var(--yellow-l)">añadir, buscar, editar y borrar facturas</span>, añadir a tus clientes para llevar un seguimiento completo de las facturas que emites para cada uno de ellos, así como poder comprobar los 
+								<span style="font-weight: bold; color: var(--yellow-l)">ingresos y gastos</span> por cliente y por trimestre.
+								<br><br>
+								Esta aplicación funciona con una <span style="font-weight: bold; color: var(--yellow-l)">base de datos interna</span> que se crea al iniciar la aplicación por primera vez. Posteriormente se pueden crear nuevas bases de datos para llevar el control de otras actividades.
+							</p>
+						</div>
+					</div>
+					<!-- <div id="projects" class="">
+						<h2 class="card-title" style="margin-bottom: 0" lang="en">Projects</h2>
+						<h2 class="card-title" style="margin-bottom: 0" lang="sp">Proyectos</h2>
+						<div class="n-col container-x1"> -->
+							<!-- CHINA GAP -->
+						<!--</div>
+					</div>-->
+				</div>
+			</div>
+			<div id="hobbies" class="info-card card-hidden">
+				<div class="container-x1">
+					<div id="casts" class="">
+						<h2 class="card-title" style="margin-bottom: 0" lang="en">Casts</h2>
+						<h2 class="card-title" style="margin-bottom: 0" lang="sp">Narraciones</h2>
+						<div class="n-col container-x1" style="align-items: center;">
+							<div class="n-row video-left">
+								<video src="videos/casts/pastor jiejie.mp4" controls class="video"></video>
+								<div class="col-flex-start">
+									<h3 class="card-subtitle" style="color: var(--yellow-l); font-weight: bold;"><span class="mark-text">LPL SUMMER SPLIT:</span> OMG vs EDG</h3>
+									<p style="color: white;" lang="en">Jiejie, the sheperd, carrying EDG.</p>
+									<p style="color: white;" lang="sp">El pastor Jiejie llevando a EDG a la victoria.</p>
+								</div>
+							</div>
+							<div class="n-row video-right">
+								<div class="col-flex-end">
+									<h3 class="card-subtitle" style="color: var(--yellow-l); font-weight: bold;"><span class="mark-text">Q2 SuperLiga 2:</span> DR0 vs SB</h3>
+									<p style="color: white;" lang="en">Inmortal Myrgwen.</p>
+									<p style="color: white;" lang="sp">Myrgwen inmortal.</p>
+								</div>
+								<video src="videos/casts/2 minutos de Myrgwen.mp4" controls class="video"></video>
+							</div>
+							<div class="n-row video-left">
+								<video src="videos/casts/Myrgwen.mp4" controls class="video"></video>
+								<div class="col-flex-start">
+									<h3 class="card-subtitle" style="color: var(--yellow-l); font-weight: bold;"><span class="mark-text">Q2 SuperLiga 2:</span> DR0 vs SB</h3>
+									<p style="color: white;" lang="en">Simply Myrgwen.</p>
+									<p style="color: white;" lang="sp">Symplemente Myrgwen.</p>
+								</div>
+							</div>
+							<div class="n-row video-right">
+								<div class="col-flex-end">
+									<h3 class="card-subtitle" style="color: var(--yellow-l); font-weight: bold;"><span class="mark-text">LPL SUMMER SPLIT:</span> JDG vs LNG</h3>
+									<p style="color: white;" lang="en">300IQ backdoor from LNG.</p>
+									<p style="color: white;" lang="sp">Backdoor de 300IQ de LNG.</p>
+								</div>
+								<video src="videos/casts/LNG_3000IQ.mp4" controls class="video"></video>
+							</div>
+							<div class="n-row video-left">
+								<video src="videos/casts/Dive a Lenom.mp4" controls class="video"></video>
+								<div class="col-flex-start">
+									<h3 class="card-subtitle" style="color: var(--yellow-l); font-weight: bold;"><span class="mark-text">Q2 SuperLiga 2:</span> SB vs WO</h3>
+									<p style="color: white;" lang="en">Lenom gets dived, he almost gets a kill.</p>
+									<p style="color: white;" lang="sp">Dive a Lenom que casi saca una kill.</p>
+								</div>
+							</div>
+							<div class="n-row video-right">
+								<div class="col-flex-end">
+									<h3 class="card-subtitle" style="color: var(--yellow-l); font-weight: bold;"><span class="mark-text">Q2 SuperLiga 2:</span> PWN vs SB</h3>
+									<p style="color: white;" lang="en">It starts as it ends: Frappii gets caught.</p>
+									<p style="color: white;" lang="sp">Todo empieza igual que acaba: cazando a Frappii.</p>
+								</div>
+								<video src="videos/casts/Doble cazada a Frappii.mp4" controls class="video"></video>
+							</div>
+						</div>
+					</div>
+					<!--<div id="music" class="">
+						<h2 class="card-title" style="margin-bottom: 0" lang="en">Music</h2>
+						<h2 class="card-title" style="margin-bottom: 0" lang="sp">Música</h2>
+						<div class="n-row container-x1" style="align-items: center;">
+							<div class="n-row video-left">
+								<video src="videos/music/You are the reason - instagram.mp4" controls class="video"></video>
+								<div class="col-flex-start">
+									<h3 class="card-subtitle"><span class="mark-text">YOU ARE THE REASON</span></h3>
+									<p style="color: white;" lang="en">.</p>
+									<p style="color: white;" lang="sp">.</p>
+								</div>
+							</div>
+							<div class="n-row video-right">
+								<div class="col-flex-end">
+									<h3 class="card-subtitle"><span class="mark-text">BLINDING LIGHTS</span></h3>
+									<p style="color: white;" lang="en">.</p>
+									<p style="color: white;" lang="sp">.</p>
+								</div>
+								<video src="videos/music/blinding lights.mp4" controls class="video"></video>
+							</div>
+						</div>
+					</div>-->
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		new TypeIt("#positions", {
+			speed: 120,
+			startDelay: 500,
+			loop: true
+		})
+			.type("Videogame Programmer", {delay: 2000})
+			.delete(20, {delay: 400})
+			.type("AI Programmer", {delay: 2000})
+			.delete(13, {delay: 400})
+			.go();
+	</script>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Testing...</title>
+	<script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css?family=Robot:300,400,500,700,900&display=swap');
+
+		*{
+			margin: 0;
+			padding: 0;
+			font-family: 'Robot', sans-serif;
+		}
+		body{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+			background: #03a9f4;
+		}
+		.box{
+			position: relative;
+			width: 500px;
+			height: 300px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: row;
+			background: #fff;
+			box-shadow: 0 30px 60px rgba(0, 0, 0, .2);
+		}
+		.box .percent{
+			position: relative;
+			width: 80px;
+			height: 80px;
+		}
+		.box .percent svg{
+			position: relative;
+			width: 80px;
+			height: 80px;
+			transform: rotate(270deg);
+		}
+		.box .percent svg circle{
+			width: 80px;
+			height: 80px;
+			fill: none;
+			stroke-width: 6;
+			stroke: #000;
+			transform: translate(5px, 5px);
+			stroke-dasharray: 220;
+			stroke-dashoffset: 220;
+			stroke-linecap: round;
+		}
+		.box .percent svg circle:nth-child(1){
+			fill: black;
+		}
+		.box .percent svg circle:nth-child(2){
+			stroke-dashoffset: 0;
+			stroke: #c1c1c1;
+		}
+		.box .percent svg circle:nth-child(3){
+			stroke-dashoffset: calc(220 - (220 * 87) / 100);
+			stroke: #03a9f4;
+		}
+		.box .percent .image{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: #999;
+		}
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(".percent").each(function() {
+				$circle = $(this).find("circle").eq(2).css("stroke-dashoffset", "calc(220 - (220 * " + $(this).data("percent") + ") / 100)");
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="box">
+		<div class="percent" data-percent="75">
+			<svg>
+				<circle cx="35" cy="35" r="35"></circle>
+				<circle cx="35" cy="35" r="35"></circle>
+				<circle cx="35" cy="35" r="35"></circle>
+			</svg>
+			<div class="image">
+				<img src="img/logos/css-logo.png" height="50px">
+			</div>
+		</div>
+		<div class="percent" data-percent="50">
+			<svg>
+				<circle cx="35" cy="35" r="35"></circle>
+				<circle cx="35" cy="35" r="35"></circle>
+				<circle cx="35" cy="35" r="35"></circle>
+			</svg>
+			<div class="image">
+				<img src="img/logos/java-logo.png" height="50px">
+			</div>
+		</div>
+	</div>
+</body>
+</html>

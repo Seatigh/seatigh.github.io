@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Kahoot</title>
+	<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+	<style type="text/css">
+		body {
+			max-height: 950px;
+			max-width: 1920px;
+			overflow: hidden;
+		}
+
+		.ans {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-content: center;
+			width: 48%;
+			height: 98%;
+			border-radius: 20px;
+			margin-left: 16px;
+			margin-right: 16px;
+			text-align: center;
+			font-weight: bold;
+			font-size: 32px;
+		}
+
+		.ans {
+			cursor: pointer;
+		}
+
+		#ans1 {
+			background: blue;
+		}
+		#ans1:not(.disabled):hover {
+			background: rgba(0, 0, 255, 0.6);
+		}
+		#ans2 {
+			background: red;
+		}
+		#ans2:not(.disabled):hover {
+			background: rgba(255, 0, 0, 0.6);
+		}
+		#ans3 {
+			background: rgb(255, 224, 0);
+		}
+		#ans3:not(.disabled):hover {
+			background: rgba(255, 224, 0, 0.6);
+		}
+		#ans4 {
+			background: green;
+		}
+		#ans4:not(.disabled):hover {
+			background: rgba(0, 128, 0, 0.6);
+		}
+
+		.ans_row {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-content: center;
+			width: 100%;
+			height: 160px;
+			margin-top: 16px;
+		}
+
+		.asq {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-content: center;
+			width: 100%;
+			height: 900px;
+			text-align: center;
+			background-color: #ff22aa;
+			font-weight: bold;
+			font-size: 72px;
+			border-radius: 20px;
+		}
+
+		.container_100 {
+			width: 100%;
+			height: 100%;
+		}
+
+		.disabled {
+
+		}
+
+		.f_col {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-content: space-between;
+		}
+
+		p {
+			margin: auto;
+		}
+
+		.show-img {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-content: center;
+			margin-top: 16px;
+		}
+
+		.timer-bar {
+			width: 100%;
+			max-width: 100%;
+			height: 100%;
+			max-height: 100%;
+			background-color: cyan;
+			border-radius: 25px;
+		}
+
+		.timer-cont {
+			width: 100%;
+			height: 16px;
+			border: 2px solid black;
+			border-radius: 25px;
+			margin-bottom: 8px;
+		}
+	</style>
+	<script type="text/javascript">
+		var interval;
+		var ans = ["ans1", "ans2", "ans3", "ans4"];
+
+		function updateTimerBar() {
+			$(".timer-bar").animate({
+				width: '0%',
+				marginLeft: "100%"
+			}, 3000);
+			return new Promise(resolve => {
+				setTimeout(() => {
+					resolve();
+				}, 3000);
+			});
+		}
+
+		async function anim() {
+			var x = await updateTimerBar();
+			clearInterval(interval);
+			$(".asq").animate({
+				height: "150px"
+			}, "slow");
+			$(".timer-cont").hide();
+		}
+
+		function selectAns(event) {
+			if (!$(this).hasClass("disabled")) {
+				var index = ans.indexOf(event.target.id);
+				for (var i = 0; i < ans.length; i++) {
+					if (i != index) {
+						$("#" + ans[i] + "").animate({
+							opacity: "50%"
+						}, 500);
+
+					}
+				}
+			}
+		}
+
+		$(document).ready(function() {
+			anim();
+			/*$(".asq").fadeIn().delay(3000).animate({
+				height: "200px"
+			}, "slow");*/
+		});
+	</script>
+</head>
+<body>
+	<div class="container_100 f_col">
+		<div class="timer-cont">
+			<div class="timer-bar"></div>
+		</div>
+		<div class="asq">
+			<p>¿Cuántos equipos van al MSI?</p>
+		</div>
+		<div class="show-img">
+			<img src="img/profile.jpg">
+		</div>
+		<div class="ans_row">
+			<div id="ans1" class="ans" onclick="selectAns()">
+				5
+			</div>
+			<div id="ans2" class="ans" onclick="selectAns()">
+				8
+			</div>
+		</div>
+		<div class="ans_row">
+			<div id="ans3" class="ans" onclick="selectAns()">
+				12
+			</div>
+			<div id="ans4" class="ans" onclick="selectAns()">
+				11
+			</div>
+		</div>
+	</div>
+</body>
+</html>

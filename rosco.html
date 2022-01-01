@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<!-- <link rel="stylesheet" type="text/css" href="../css/styles.css"> -->
+		<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
+		<script type="text/javascript">
+			document.addEventListener('keydown', logKey);
+
+			function check(event) {
+				console.log("Botón: " + event.button + "\n" + event.target.innerHTML);
+				var item = document.getElementById(event.target.innerHTML.toLowerCase());
+				var audio;
+				if (event.button == 2) {
+					item.classList.toggle("incorrect");
+					audio = new Audio("sounds/incorrect.mp3");
+				} else if (event.button == 0) {
+					item.classList.toggle("correct");
+					audio = new Audio("sounds/correct.mp3");
+				} else {
+					console.log("Click derecho");
+				}
+				audio.play();
+			}
+
+			function logKey(e) {
+				console.log(
+					"Key Pressed: " + String.fromCharCode(e.keyCode) + "\n"
+					+ "charCode: " + e.keyCode + "\n"
+					+ "SHIFT key pressed: " + e.shiftKey + "\n"
+					+ "ALT key pressed: " + e.altKey + "\n"
+				  );
+				var item = document.getElementById(String.fromCharCode(e.keyCode).toLowerCase());
+				if (e.altKey) { // Incorrect
+					item.classList.toggle("incorrect");
+				} else { // Correct
+					item.classList.toggle("correct");
+				}
+			}
+		</script>
+		<title>Seatigh</title>
+		<style type="text/css">
+			body {
+				background-color: black;
+			}
+
+			.contenedor {
+				width: 100%;
+				color: white;
+			}
+
+			.circulo {
+				position: relative;
+				list-style: none;
+				border-radius: 50%;
+				width: 50em;
+				height: 50em;
+				left: 50%;
+				padding: 0;
+				transform: translateX(-50%);
+			}
+
+			.circulo > * {
+				display: block;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 1.25em;
+				height: 1.25em;
+				margin: -0.625em;
+			}
+			.circulo > *:nth-of-type(1) {
+				transform: rotate(270deg) translate(20em) rotate(-270deg); }
+			.circulo > *:nth-of-type(2) {
+				transform: rotate(284.4deg) translate(20em) rotate(-284.4deg); }
+			.circulo > *:nth-of-type(3) {
+				transform: rotate(298.8deg) translate(20em) rotate(-298.8deg); }
+			.circulo > *:nth-of-type(4) {
+				transform: rotate(313.2deg) translate(20em) rotate(-313.2deg); }
+			.circulo > *:nth-of-type(5) {
+				transform: rotate(327.6deg) translate(20em) rotate(-327.6deg); }
+			.circulo > *:nth-of-type(6) {
+				transform: rotate(342deg) translate(20em) rotate(-342deg); }
+			.circulo > *:nth-of-type(7) {
+				transform: rotate(356.4deg) translate(20em) rotate(-356.4deg); }
+			.circulo > *:nth-of-type(8) {
+				transform: rotate(370.8deg) translate(20em) rotate(-370.8deg); }
+			.circulo > *:nth-of-type(9) {
+				transform: rotate(385.2deg) translate(20em) rotate(-385.2deg); }
+			.circulo > *:nth-of-type(10) {
+				transform: rotate(399.6deg) translate(20em) rotate(-399.6deg); }
+			.circulo > *:nth-of-type(11) {
+				transform: rotate(414deg) translate(20em) rotate(-414deg); }
+			.circulo > *:nth-of-type(12) {
+				transform: rotate(428.4deg) translate(20em) rotate(-428.4deg); }
+			.circulo > *:nth-of-type(13) {
+				transform: rotate(442.8deg) translate(20em) rotate(-442.8deg); }
+			.circulo > *:nth-of-type(14) {
+				transform: rotate(457.2deg) translate(20em) rotate(-457.2deg); }
+			.circulo > *:nth-of-type(15) {
+				transform: rotate(471.6deg) translate(20em) rotate(-471.6deg); }
+			.circulo > *:nth-of-type(16) {
+				transform: rotate(486deg) translate(20em) rotate(-486deg); }
+			.circulo > *:nth-of-type(17) {
+				transform: rotate(500.4deg) translate(20em) rotate(-500.4deg); }
+			.circulo > *:nth-of-type(18) {
+				transform: rotate(514.8deg) translate(20em) rotate(-514.8deg); }
+			.circulo > *:nth-of-type(19) {
+				transform: rotate(529.2deg) translate(20em) rotate(-529.2deg); }
+			.circulo > *:nth-of-type(20) {
+				transform: rotate(543.6deg) translate(20em) rotate(-543.6deg); }
+			.circulo > *:nth-of-type(21) {
+				transform: rotate(558deg) translate(20em) rotate(-558deg); }
+			.circulo > *:nth-of-type(22) {
+				transform: rotate(572.4deg) translate(20em) rotate(-572.4deg); }
+			.circulo > *:nth-of-type(23) {
+				transform: rotate(586.8deg) translate(20em) rotate(-586.8deg); }
+			.circulo > *:nth-of-type(24) {
+				transform: rotate(601.2deg) translate(20em) rotate(-601.2deg); }
+			.circulo > *:nth-of-type(25) {
+				transform: rotate(615.6deg) translate(20em) rotate(-615.6deg); }
+			.circulo .item {
+				display: block;
+				width: 3.25em;
+				height: 3.25em;
+				transition: all .3s ease-in-out;
+				border: 2px solid #fff;
+				border-radius: 50%;
+				background-image: radial-gradient(circle, #0074d9, #004b8d);
+				color: #fff;
+				line-height: 3.25em;
+				text-align: center;
+				text-decoration: none;
+				cursor: default;
+				font-family: 'Source Code Pro';
+				font-weight: 700;
+				font-size: 20px;
+			}
+			.circulo .item--success {
+				background-image: radial-gradient(circle, #9ee379, #4caf50);
+			}
+			.circulo .item--failure {
+				background-image: radial-gradient(circle, #b9121b, #8e001c);
+			}
+			.correct {
+				background-image: radial-gradient(circle, #17d900, #004e02) !important;
+			}
+			.incorrect {
+				background-image: radial-gradient(circle, #d90000, #4e0000) !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="contenedor">
+			<ul class="circulo">
+				<li id="a" class="item" onmousedown="check(event)">A</li>
+				<li id="b" class="item" onmousedown="check(event)">B</li>
+				<li id="c" class="item" onmousedown="check(event)">C</li>
+				<li id="d" class="item" onmousedown="check(event)">D</li>
+				<li id="e" class="item" onmousedown="check(event)">E</li>
+				<li id="f" class="item" onmousedown="check(event)">F</li>
+				<li id="g" class="item" onmousedown="check(event)">G</li>
+				<li id="h" class="item" onmousedown="check(event)">H</li>
+				<li id="i" class="item" onmousedown="check(event)">I</li>
+				<li id="j" class="item" onmousedown="check(event)">J</li>
+				<li id="k" class="item" onmousedown="check(event)">K</li>
+				<li id="l" class="item" onmousedown="check(event)">L</li>
+				<li id="m" class="item" onmousedown="check(event)">M</li>
+				<li id="n" class="item" onmousedown="check(event)">N</li>
+				<li id="o" class="item" onmousedown="check(event)">O</li>
+				<li id="p" class="item" onmousedown="check(event)">P</li>
+				<li id="q" class="item" onmousedown="check(event)">Q</li>
+				<li id="r" class="item" onmousedown="check(event)">R</li>
+				<li id="s" class="item" onmousedown="check(event)">S</li>
+				<li id="t" class="item" onmousedown="check(event)">T</li>
+				<li id="u" class="item" onmousedown="check(event)">U</li>
+				<li id="v" class="item" onmousedown="check(event)">V</li>
+				<li id="w" class="item" onmousedown="check(event)">W</li>
+				<li id="y" class="item" onmousedown="check(event)">Y</li>
+				<li id="z" class="item" onmousedown="check(event)">Z</li>
+			</ul>
+		</div>
+	</body>
+</htlm>
