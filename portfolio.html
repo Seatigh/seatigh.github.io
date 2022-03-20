@@ -14,11 +14,18 @@
 		
 		<title>Seatigh portfolio</title>
 		<script type="text/javascript">
+		var birth = new Date("1994-09-24");
+
 		$(document).ready(function() {
 			$("[lang='sp']").hide();
 			$("[lang='en']").show();
 			$("#sp").show();
 			$("#en").hide();
+
+			$("[data-age]").each(function (index){
+				var dateDiff = Date.now() - birth;
+				$(this).text(new Date(dateDiff).getUTCFullYear() - 1970);
+			});
 
 			$(".percent").each(function() {
 				$circle = $(this).find("circle").eq(2).css("stroke-dashoffset", "calc(220 - (220 * " + $(this).data("percent") + ") / 100)");
@@ -122,8 +129,8 @@
 							</div>
 							<div>
 								<ul class="pers-info">
-									<li lang="en"><b>Age:</b> <span style="color: white">26</span></li>
-									<li lang="sp"><b>Edad:</b> <span style="color: white">26</span></li>
+									<li lang="en"><b>Age:</b> <span style="color: white" data-age=>99</span></li>
+									<li lang="sp"><b>Edad:</b> <span style="color: white" data-age=>99</span></li>
 									<li lang="en"><b>Current position:</b> <span style="color: white">Available/Freelance</span></li>
 									<li lang="sp"><b>Posición actual:</b> <span style="color: white">Desempleado/Freelance</span></li>
 									<li lang="en"><b>Residency:</b> <span style="color: white">Madrid, Spain</span></li>
